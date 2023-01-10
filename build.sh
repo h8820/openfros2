@@ -42,6 +42,8 @@ build_product()
     echo "clean tmp dir ....ok"
     cp ${CONFIG_PATH}/${arch}/${product} .config
     if [ $fros_ipk -eq 1 ];then
+		echo "CONFIG_PACKAGE_zerotier=y" >>.config
+                echo "CONFIG_PACKAGE_luci-app-zerotier=y" >>.config
 		echo "CONFIG_PACKAGE_apid=y" >>.config
 		echo "CONFIG_PACKAGE_appfilter=y" >>.config
 		echo "CONFIG_PACKAGE_kmod-app_delay=y" >>.config
